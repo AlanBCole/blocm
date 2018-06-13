@@ -1,0 +1,33 @@
+{
+  "name": "blocm",
+  "version": "0.0.1",
+  "description": "A simple CMS and blog engine",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanBCole/blocm.git"
+  },
+  "author": "Alan B Cole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanBCole/blocm/issues"
+  },
+  "homepage": "https://github.com/AlanBCole/blocm#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.7.0",
+    "webpack": "^4.12.0",
+    "webpack-stream": "^4.0.3"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

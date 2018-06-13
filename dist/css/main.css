@@ -1,0 +1,16 @@
+header nav {
+  border: 1 #00f dotted;
+  text-align: center;
+}
+header nav a {
+  width: 10%;
+  color: rgba(200,10,150,0.5);
+}
+header nav a:hover {
+  text-decoration: none;
+  background-color: rgba(200,10,150,0.5);
+  color: #fff;
+}
+header nav a:focus {
+  background-color: rgba(200,10,150,0.125);
+}
