@@ -1,7 +1,19 @@
-import { fuckOff } from './another';
+import createElement from 'virtual-dom/create-element';
 
-var fuckWebPack = "Webpack, I know you are pretty cool but your communication skills really suck! I mean it!!";
+import { setSection, setSections } from './section-view';
 
-const screwWebPack = "Listening to you can make me want to punch you in the face. I have wasted way too much time trying to figure out your explanations :(";
+const testSections = [
+    {
+        title: 'Test',
+        imgUrl: '../assets/california-2018-small.jpeg',
+        text: `# stuff \n## some example text and list \n1. first \n2. second \n3. third  `,
+    },
+]
 
-fuckOff(fuckWebPack, screwWebPack);
+const app = document.getElementById('app');
+const nav = document.querySelector('nav');
+
+const virtualSections = setSections(nav, testSections);
+const view = createElement(virtualSections);
+
+app.appendChild(view);

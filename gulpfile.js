@@ -26,4 +26,9 @@ gulp.task('webpack', () => {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('default', ['styles', 'webpack']);
+gulp.task('assets', () => {
+    return gulp.src('src/assets/**/*')
+        .pipe(gulp.dest('dist/assets/'))
+})
+
+gulp.task('default', ['styles', 'webpack', 'assets']);

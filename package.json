@@ -23,11 +23,13 @@
     "babel-preset-env": "^1.7.0",
     "gulp": "^3.9.1",
     "gulp-stylus": "^2.7.0",
+    "virtual-dom": "^2.1.1",
     "webpack": "^4.12.0",
     "webpack-stream": "^4.0.3"
   },
   "dependencies": {
     "express": "^4.16.3",
+    "marked": "^0.4.0",
     "webpack-dev-server": "^3.1.4"
   }
 }
