@@ -22,11 +22,11 @@ function setTitleDiv(section) {
             setTitle(section.title),
             setImage(section.imgUrl),
         ]
-    )
+    );
 }
 
 function setTextDiv(section) {
-    const htmlText = getHtmlText(section.text)
+    const htmlText = getHtmlText(section.text);
     let textDiv = h('div', { className: 'text-div' }, [htmlText]);
     textDiv.innerHtml = htmlText;
 
@@ -45,13 +45,14 @@ export function setSection(navElement, section) {
     return h('section', { className: 'home-page-section' }, [
         setTitleDiv(section),
         setTextDiv(section),
-    ])
+    ]);
 }
 
 export function setSections(navElement, sections) {
     const virtualSections = sections.map((section) => {
-        return setSection(navElement, section)
-    })
+        return setSection(navElement, section);
+    });
 
-    return h('div', virtualSections);
+        // return virtualSections;
+    return h('main', { className: 'home-page-sections' } , virtualSections);
 }
