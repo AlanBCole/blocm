@@ -21,15 +21,15 @@ header nav a:hover {
   background-color: rgba(200,10,150,0.5);
   color: #fff;
 }
-section.home-page-section {
+.home-page-section {
   display: flex;
 }
-section.home-page-section .title-div,
-section.home-page-section .text-div {
+.home-page-section .title-div,
+.home-page-section .text-div {
   width: 50%;
   padding: 1rem;
 }
-section.home-page-section .title-div img,
-section.home-page-section .text-div img {
+.home-page-section .title-div img,
+.home-page-section .text-div img {
   width: 100%;
 }
