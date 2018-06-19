@@ -1,13 +1,12 @@
-import { h } from 'virtual-dom';
-import createElement from 'virtual-dom/create-element';
+import el from './make-html';
 import marked from 'marked';
 
 function setTitle(title) {
-    return h('h2', title);
+    return el('h2', {}, title);
 }
 
 function setImage(url) {
-    return h('img', { src: url });
+    return el('img', { src: url });
 }
 
 function getHtmlText(text) {
@@ -15,43 +14,51 @@ function getHtmlText(text) {
 }
 
 function setTitleDiv(section) {
-    return h('div', {
-            className: 'title-div',
+    return el('div', {
+            class: 'title-div',
         },
+        '',
         [
             setTitle(section.title),
             setImage(section.imgUrl),
         ]
-    )
+    );
 }
 
 function setTextDiv(section) {
-    const htmlText = getHtmlText(section.text)
-    let textDiv = h('div', { className: 'text-div' }, [htmlText]);
-    textDiv.innerHtml = htmlText;
+    const htmlText = getHtmlText(section.text);
+    let textDiv = el('div', { class: 'text-div' }, htmlText);
 
     return textDiv;
 }
 
 function createNavLink(section) {
-    return h('a', { href: '#' + section.title }, section.title);
+    return el('a', { href: '#' + section.title }, section.title);
 }
 
 export function setSection(navElement, section) {
-    const virtualLink = createNavLink(section);
-    const link = createElement(virtualLink);
+    const link = createNavLink(section);
     navElement.appendChild(link);
 
-    return h('section', { className: 'home-page-section' }, [
-        setTitleDiv(section),
-        setTextDiv(section),
-    ])
+    return el(
+        'section',
+        { 
+            class: 'home-page-section',
+            id: section.title,
+            
+        },
+        '',
+        [
+            setTitleDiv(section),
+            setTextDiv(section),
+        ]
+    );
 }
 
 export function setSections(navElement, sections) {
-    const virtualSections = sections.map((section) => {
-        return setSection(navElement, section)
-    })
+    const homePageSections = sections.map((section) => {
+        return setSection(navElement, section);
+    });
 
-    return h('div', virtualSections);
+    return el('main', { class: 'home-page-sections' }, '',homePageSections);
 }

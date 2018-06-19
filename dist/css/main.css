@@ -1,3 +1,11 @@
+body {
+  font-family: sans-serif;
+}
+header h4 {
+  text-align: center;
+  color: rgba(200,10,150,0.75);
+  text-transform: uppercase;
+}
 header nav {
   border: 1 #00f dotted;
   text-align: center;
@@ -5,14 +13,25 @@ header nav {
 header nav a {
   width: 10%;
   color: rgba(200,10,150,0.5);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
 }
 header nav a:hover {
   text-decoration: none;
   background-color: rgba(200,10,150,0.5);
   color: #fff;
 }
-header nav a:focus {
-  background-color: rgba(200,10,150,0.125);
+.home-page-section {
+  display: flex;
+}
+.home-page-section .title-div,
+.home-page-section .text-div {
+  width: 50%;
+  padding: 1rem;
+}
+.home-page-section .title-div img,
+.home-page-section .text-div img {
+  width: 100%;
 }
 section {
   border: 1px solid #000;

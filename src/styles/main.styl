@@ -1,27 +1,28 @@
+body
+  font-family sans-serif
+
 header 
+  h4
+    text-align center
+    color rgba(200,10,150, .75)
+    text-transform uppercase
   nav
     border 1 blue dotted
     text-align center
     a
-      width: 10%
+      width 10%
       color rgba(200,10,150, .5)
+      text-decoration none
+      padding .5rem 1rem
     a:hover
       text-decoration none
       background-color rgba(200,10,150, .5)
       color white
-    a:focus
-      background-color rgba(200,10,150, .125)
 
-section
-  border 1px solid black
-  border-radius 5px
-  margin 2rem
-  width 100%
+.home-page-section
   display flex
-  .title-div
-    50%
+  .title-div, .text-div
+    width 50%
+    padding 1rem
     img
-      width 100%
-  .text-div
-    50%
-    text-align center
+      width: 100%
