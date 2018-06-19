@@ -14,3 +14,16 @@ header nav a:hover {
 header nav a:focus {
   background-color: rgba(200,10,150,0.125);
 }
+section {
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 2rem;
+  width: 100%;
+  display: flex;
+}
+section .title-div img {
+  width: 100%;
+}
+section .text-div {
+  text-align: center;
+}
