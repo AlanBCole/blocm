@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         "title": "First",
         "imgUrl": "../assets/california-2018-small.jpeg",

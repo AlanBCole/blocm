@@ -4,7 +4,7 @@ import { setSections } from './section-view';
 const app = document.getElementById('app');
 const nav = document.querySelector('nav');
 
-const contentForMainTag = fetch('./assets/home-page-sections.json')
+fetch('/homepage')
     .then((response) => { 
         console.log("response:", response);
         return response.json();
@@ -22,8 +22,8 @@ function startApp() {
         const view = setSections(nav, initModel.homePageSections);
     
         app.appendChild(view);
-        console.log(contentForMainTag);
+        console.log("You should see the homepage stuff now.");
     } else {
-        console.log("no blog yet :[", contentForMainTag);
+        console.log("no blog yet :[");
     }
 }

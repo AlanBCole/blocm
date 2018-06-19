@@ -36,14 +36,21 @@ function createNavLink(section) {
     return el('a', { href: '#' + section.title }, section.title);
 }
 
-export function setSection(navElement, section) {
+export function setSection(navElement, section, index) {
     const link = createNavLink(section);
     navElement.appendChild(link);
+    let classes = '';
+
+    if (index % 2 === 0) {
+        classes = 'home-page-section grey';
+    } else {
+        classes = 'home-page-section';
+    }
 
     return el(
         'section',
         { 
-            class: 'home-page-section',
+            class: classes,
             id: section.title,
             
         },
@@ -56,8 +63,8 @@ export function setSection(navElement, section) {
 }
 
 export function setSections(navElement, sections) {
-    const homePageSections = sections.map((section) => {
-        return setSection(navElement, section);
+    const homePageSections = sections.map((section, index) => {
+        return setSection(navElement, section, index);
     });
 
     return el('main', { class: 'home-page-sections' }, '',homePageSections);
