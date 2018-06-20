@@ -1,18 +1,24 @@
 module.exports = [
     {
         "title": "First",
-        "imgUrl": "../assets/california-2018-small.jpeg",
-        "text": "# stuff \n## some example text and list \n1. first \n2. second \n3. third  "
+        "text": "# stuff \n## some example text and list \n1. first \n2. second \n3. third  ",
+        "btnMsg": null,
+        "buttonNeeded": false,
+        "sectionId": 0,
     },
     {
         "title": "Second",
-        "imgUrl": "../assets/california-2018-small.jpeg",
-        "text": "# stuff \n## some example text and list \n1. first \n2. second \n3. third  "
+        "text": "# stuff \n## some example text and list \n1. first \n2. second \n3. third  ",
+        "btnMsg": null,
+        "buttonNeeded": false,
+        "sectionId": 1,
     },
     {
         "title": "Third",
-        "imgUrl": "../assets/california-2018-small.jpeg",
-        "text": "# stuff \n## some example text and list \n1. first \n2. second \n3. third  "
+        "text": "# stuff \n## some example text and list \n1. first \n2. second \n3. third  ",
+        "btnMsg": null,
+        "buttonNeeded": false,
+        "sectionId": 2,
     }
     
-]
+];

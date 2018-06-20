@@ -1,4 +1,6 @@
-function el(tagName, attributes, text, childNodes) {
+import marked from 'marked';
+
+export function el(tagName, attributes, text, childNodes) {
     const node = document.createElement(tagName);
     
     if (attributes) {
@@ -21,4 +23,6 @@ function el(tagName, attributes, text, childNodes) {
     return node;
 }
 
-export default el;
+export function getHtmlText(text) {
+    return marked(text);
+}

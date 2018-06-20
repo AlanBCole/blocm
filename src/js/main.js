@@ -1,29 +1,27 @@
-import { initModel } from './model';
-import { setSections } from './section-view';
+
+import { startApp } from './app.js';
 
 const app = document.getElementById('app');
+const header = document.querySelector('header');
 const nav = document.querySelector('nav');
+const greeting = document.getElementById('greeting');
+const greetingPic = document.getElementById('greeting-pic');
 
-fetch('/homepage')
+var model = {};
+
+window.fetch('/header')
     .then((response) => { 
         console.log("response:", response);
         return response.json();
     })
     .then((data) => {
         console.log(data);
-        initModel.homePageSections = data;
+        model = data;
+        greeting.innerText = model.blocmOwnerName + ' ' + model.blocmOwnerBusiness;
+        greetingPic.src = model.blocmOwnerImgUrl;
     })
     .then(() => {
-        startApp();
+        startApp(model, app, nav, 'homepage');
     });
 
-function startApp() {
-    if (initModel.isHomePageShown === true) {
-        const view = setSections(nav, initModel.homePageSections);
-    
-        app.appendChild(view);
-        console.log("You should see the homepage stuff now.");
-    } else {
-        console.log("no blog yet :[");
-    }
-}
+

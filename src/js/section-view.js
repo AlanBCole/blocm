@@ -1,16 +1,8 @@
-import el from './make-html';
-import marked from 'marked';
+import { el, getHtmlText } from './make-html';
+import { startApp } from './app';
 
 function setTitle(title) {
     return el('h2', {}, title);
-}
-
-function setImage(url) {
-    return el('img', { src: url });
-}
-
-function getHtmlText(text) {
-    return marked(text);
 }
 
 function setTitleDiv(section) {
@@ -20,7 +12,6 @@ function setTitleDiv(section) {
         '',
         [
             setTitle(section.title),
-            setImage(section.imgUrl),
         ]
     );
 }
@@ -32,13 +23,26 @@ function setTextDiv(section) {
     return textDiv;
 }
 
-function createNavLink(section) {
-    return el('a', { href: '#' + section.title }, section.title);
+function createNavLink(eventHandler, section) {
+    return el('a',
+        { 
+            href: '#' + section.title,
+            onclick: '"' + eventHandler('homepage') + '"',
+        },
+        section.title);
 }
 
-export function setSection(navElement, section, index) {
-    const link = createNavLink(section);
-    navElement.appendChild(link);
+// export function setSectionNavLinks(navElement, eventHandler, sections) {
+//     sections.forEach((section) => {
+//         const link = createNavLink(eventHandler, section);
+//         navElement.appendChild(link);  
+//     })
+// } 
+
+function setSection(eventHandler, navNode, section, index) {
+    const link = createNavLink(eventHandler, section);
+    navNode.appendChild(link);
+    
     let classes = '';
 
     if (index % 2 === 0) {
@@ -62,10 +66,10 @@ export function setSection(navElement, section, index) {
     );
 }
 
-export function setSections(navElement, sections) {
+export function homePageView(eventHandler, navNode, sections) {
     const homePageSections = sections.map((section, index) => {
-        return setSection(navElement, section, index);
+        return setSection(eventHandler, navNode, section, index);
     });
 
-    return el('main', { class: 'home-page-sections' }, '',homePageSections);
+    return el('main', { class: 'home-page-sections' }, '', homePageSections);
 }
