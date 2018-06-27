@@ -9,7 +9,7 @@ module.exports= {
         path: path.resolve(__dirname, 'dist'),
         filename: './js/[name].js'
     },
-    watch: true,
+    // watch: true,
     devtool: 'inline-source-map',
     module: {
         rules: [

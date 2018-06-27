@@ -1,4 +1,4 @@
-import { homePageView } from './section-view';
+import { homePageView } from './home-page-view';
 import { setBlogNavLink } from './header-view';
 
 export function startApp(model, appNode, navNode, msg) {

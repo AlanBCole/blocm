@@ -1,3 +1,5 @@
+greyColor = #43464b
+
 body
   font-family sans-serif
   width 100%
@@ -5,31 +7,35 @@ body
   margin 1rem auto 0 auto
   
 header
-  h4
+  h3
     text-align center
-    color rgba(200,10,150, .75)
+    color greyColor
     text-transform uppercase
-  img
-      width: 100%
   nav
-    border 1 blue dotted
     text-align center
     margin-bottom 2rem
     a
       width 10%
-      color rgba(200,10,150, .5)
+      color greyColor
       text-decoration none
       padding .5rem 1rem
     a:hover
       text-decoration none
-      background-color rgba(200,10,150, .5)
-      color white
-
+      background-color greyColor
+      color #f8f8f8
+#greeting-pic {
+  width 100%
+}
 .home-page-section
+  color greyColor
   display flex
-  .title-div, .text-div
-    width 50%
+  .section-title
+    width 25%
+    text-align center
+    padding 1rem
+  .text-div
+    width 75%
     padding 1rem
 
 .grey 
-  background-color whitesmoke
+  background-color #f8f8f8

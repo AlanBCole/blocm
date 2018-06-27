@@ -1,20 +1,40 @@
 import { el } from './make-html';
-import { startApp } from './app';
 
-export function setBlogNavLink(navElement) {
-    const blogLink = el('a', {
+function setGreeting (title) {
+    return el('h3', { id: 'greeting' }, title);
+}
+
+function setHomePageLinks(dispatch, sections) {
+    const links = sections.map((section) => {
+        return el('a',
+        { 
+            href: '#' + section.title,
+            onclick: function() { dispatch('homepage') },
+        },
+        section.title);    
+    });
+    
+    return links;
+}
+
+function setBlogNavLink(dispatch) {
+    return el('a', {
             href: '#blog',
-            onclick: 'startApp("blog")',
+            onclick: function() { dispatch('blog-list') },
             id: 'blog-link'
         },
         'Blog'
     );
-    
-    navElement.appendChild(blogLink);
-    // const blog = document.createElement('a');
-    // blog.href = "/#blog";
-    // blog.onclick = "clickHandler(msg)";
-    // blog.innerText = "blog";
-    
-    // nav.appendChild(blog);
+}
+
+function createNavBar (dispatch, model) {
+    return el('nav', {}, '', [...
+            setHomePageLinks(dispatch, model.homePageSections),
+            setBlogNavLink(dispatch)
+        ]);
+}
+
+export default function createHeader(dispatch, model) {
+    const title = model.blocmOwnerName + model.blocmOwnerBusiness;
+    return el('header', {}, '', [setGreeting(title), createNavBar(dispatch, model)]);
 }

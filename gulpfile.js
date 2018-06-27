@@ -20,15 +20,28 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('watch:styles', () => {
+    gulp.watch('src/styles/*.styl', ['styles']);
+});
+
 gulp.task('webpack', () => {
     return gulp.src('src/entry.js')
         .pipe(webpack( require('./webpack.config.js') ))
         .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('watch:js', () => {
+    gulp.watch('src/**/*.js', ['webpack']);
+});
+
 gulp.task('assets', () => {
     return gulp.src('src/assets/**/*')
-        .pipe(gulp.dest('dist/assets/'))
-})
+        .pipe(gulp.dest('dist/assets/'));
+});
 
-gulp.task('default', ['styles', 'webpack', 'assets']);
+gulp.task('watch:assets', () => {
+    gulp.watch('src/assets/', ['assets']);
+});
+
+gulp.task('default', ['styles', 'webpack', 'assets', 'watch:styles', 'watch:js', 'watch:assets']);
+

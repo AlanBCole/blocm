@@ -5,7 +5,15 @@ export function el(tagName, attributes, text, childNodes) {
     
     if (attributes) {
         for (const attr in attributes) {
-            node.setAttribute(attr, attributes[attr]);
+            
+            if (attr === 'onclick') {
+                node.onclick = attributes[attr];
+                
+            } else {
+                
+                node.setAttribute(attr, attributes[attr]);
+                
+            }
         }
     }
     

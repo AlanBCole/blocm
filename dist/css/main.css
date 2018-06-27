@@ -4,38 +4,42 @@ body {
   max-width: 850px;
   margin: 1rem auto 0 auto;
 }
-header h4 {
+header h3 {
   text-align: center;
-  color: rgba(200,10,150,0.75);
+  color: #43464b;
   text-transform: uppercase;
 }
-header img {
-  width: 100%;
-}
 header nav {
-  border: 1 #00f dotted;
   text-align: center;
   margin-bottom: 2rem;
 }
 header nav a {
   width: 10%;
-  color: rgba(200,10,150,0.5);
+  color: #43464b;
   text-decoration: none;
   padding: 0.5rem 1rem;
 }
 header nav a:hover {
   text-decoration: none;
-  background-color: rgba(200,10,150,0.5);
-  color: #fff;
+  background-color: #43464b;
+  color: #f8f8f8;
+}
+#greeting-pic {
+  width: 100%;
 }
 .home-page-section {
+  color: #43464b;
   display: flex;
 }
-.home-page-section .title-div,
+.home-page-section .section-title {
+  width: 25%;
+  text-align: center;
+  padding: 1rem;
+}
 .home-page-section .text-div {
-  width: 50%;
+  width: 75%;
   padding: 1rem;
 }
 .grey {
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
 }

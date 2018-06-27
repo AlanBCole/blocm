@@ -16,12 +16,12 @@ app.get('/header', (req, res) => {
 
 app.get('/homepage', (req, res) => {
     console.log('GET /homepage');
-    res.json(mockHomePage);
+    res.json(mockModel);
 });
 
 app.get('/blog', (req, res) => {
     console.log('GET /blog');
-    res.json(mockBlogPage);
+    res.send(mockBlogPage);
 });
 
 app.listen(8080, () => console.log('app running port 8080'));
