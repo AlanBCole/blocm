@@ -34,6 +34,15 @@ gulp.task('watch:js', () => {
     gulp.watch('src/**/*.js', ['webpack']);
 });
 
+gulp.task('index.html', () => {
+    return gulp.src('src/index.html')
+        .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('watch:index.html', () => {
+    gulp.watch('src/assets/', ['index.html']);
+});
+
 gulp.task('assets', () => {
     return gulp.src('src/assets/**/*')
         .pipe(gulp.dest('dist/assets/'));

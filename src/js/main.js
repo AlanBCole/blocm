@@ -11,10 +11,7 @@ const appNode = document.getElementById('app');
 var model = {};
 
 window.fetch('/homepage')
-    .then((response) => { 
-        console.log("GET /homepage", response);
-        return response.json();
-    })
+    .then((response) => response.json())
     .then((data) => {
         console.log("homepage json", data);
         model = data;

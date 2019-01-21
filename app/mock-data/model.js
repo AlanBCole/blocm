@@ -43,5 +43,5 @@ module.exports = {
     ],
     "nextBlogId": 2,
     "nextSectionId": 3,
-    "isBlog": true
-}
+    "isBlog": false
+};
