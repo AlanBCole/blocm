@@ -15,22 +15,6 @@ function setTextDiv(section) {
     return textDiv;
 }
 
-// function createNavLink(eventHandler, section) {
-//     return el('a',
-//         { 
-//             href: '#' + section.title,
-//             onclick: '"' + eventHandler('homepage') + '"',
-//         },
-//         section.title);
-// }
-
-// export function setSectionNavLinks(navElement, eventHandler, sections) {
-//     sections.forEach((section) => {
-//         const link = createNavLink(eventHandler, section);
-//         navElement.appendChild(link);  
-//     })
-// } 
-
 function setSection(section, index) {
     // const link = createNavLink(eventHandler, section);
     // navNode.appendChild(link);
@@ -63,5 +47,5 @@ export default function homePageView(model) {
         return setSection(section, index);
     });
 
-    return el('main', { class: 'home-page-sections' }, '', [ownerImage(model.blocmOwnerImgUrl), ...homePageSections]);
+    return el('div', { class: 'home-page-sections' }, '', [ownerImage(model.blocmOwnerImgUrl), ...homePageSections]);
 }

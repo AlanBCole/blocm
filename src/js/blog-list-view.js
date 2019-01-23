@@ -55,5 +55,5 @@ export default function blogListView(model) {
         return setSection(blogEntry, index);
     })
     
-    return el('main', { class: 'blog-list'}, '', blogSections);
+    return el('div', { class: 'blog-list'}, '', blogSections);
 }

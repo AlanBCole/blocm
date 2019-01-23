@@ -1,7 +1,17 @@
 import { el } from './make-html';
 
-function setGreeting (title) {
-    return el('h3', { id: 'greeting' }, title);
+function setGreeting (dispatch, title) {
+    const link = el(
+        'a', 
+        { 
+            id: 'title-link',
+            href: '#homepage',
+            onclick: () => dispatch('homepage')
+        },
+        title
+    );
+    
+    return el('h1', { id: 'greeting' },'', [link]);
 }
 
 function setHomePageLinks(dispatch, sections) {
@@ -34,7 +44,16 @@ function createNavBar (dispatch, model) {
         ]);
 }
 
-export default function createHeader(dispatch, model) {
-    const title = model.blocmOwnerName + model.blocmOwnerBusiness;
-    return el('header', {}, '', [setGreeting(title), createNavBar(dispatch, model)]);
+export default function headerView(dispatch, model) {
+    const title = model.blocmOwnerName + ' ' + model.blocmOwnerBusiness;
+    
+    return el(
+        'header', 
+        {}, 
+        '', 
+        [
+            setGreeting(dispatch, title), 
+            createNavBar(dispatch, model)
+        ]
+    );
 }

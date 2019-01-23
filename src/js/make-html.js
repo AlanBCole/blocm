@@ -23,9 +23,8 @@ export function el(tagName, attributes, text, childNodes) {
     
     if (childNodes) {
         childNodes.forEach((childNode) => {
-            node.appendChild(childNode)
-        
-        })
+            node.appendChild(childNode);
+        });
     }
     
     return node;

@@ -52,5 +52,14 @@ gulp.task('watch:assets', () => {
     gulp.watch('src/assets/', ['assets']);
 });
 
-gulp.task('default', ['styles', 'webpack', 'assets', 'watch:styles', 'watch:js', 'watch:assets']);
+gulp.task('default', [
+    'styles', 
+    'webpack', 
+    'index.html',
+    'assets', 
+    'watch:styles', 
+    'watch:js', 
+    'watch:index.html',
+    'watch:assets'
+]);
 

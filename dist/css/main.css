@@ -4,10 +4,14 @@ body {
   max-width: 850px;
   margin: 1rem auto 0 auto;
 }
-header h3 {
+header h1 {
   text-align: center;
   color: #43464b;
   text-transform: uppercase;
+}
+header h1 a {
+  color: #43464b;
+  text-decoration: none;
 }
 header nav {
   text-align: center;
